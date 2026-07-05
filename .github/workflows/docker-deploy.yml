@@ -35,6 +35,20 @@ jobs:
           print('Status:', run.info.status)
           print('Experiment ID:', run.info.experiment_id)
           "
+      - name: Inspect MLflow artifacts
+        run: |
+          python <<EOF
+          import mlflow
+          from mlflow.tracking import MlflowClient
+
+          client = MlflowClient()
+          run_id = "${{ github.event.inputs.run_id }}"
+
+          artifacts = client.list_artifacts(run_id)
+          print("Root artifacts:")
+          for a in artifacts:
+              print("-", a.path)
+          EOF
 
       - name: Build Docker image from MLflow model
         run: |
@@ -49,4 +63,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Push Docker image
-        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/workflow-ml-fraud"
+        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/workflow-ml"
