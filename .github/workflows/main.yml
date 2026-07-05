@@ -1,5 +1,5 @@
 name: CI
- 
+
 on:
   push:
     branches:
@@ -7,45 +7,31 @@ on:
   pull_request:
     branches:
       - main
- 
+
 env:
   CSV_URL: "creditcardfraud/creditcard.csv"
- 
+  MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+  MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USERNAME }}
+  MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
- 
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
- 
-      # Setup Python 3.12.7
+
       - name: Set up Python 3.12.7
         uses: actions/setup-python@v4
         with:
           python-version: "3.12.7"
-      
-      # Check Env Variables
-      - name: Check Env
-        run: |
-          echo $CSV_URL
- 
-      # Install mlflow
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow
-      
-      # Run as a mlflow project
+          pip install mlflow xgboost imbalanced-learn scikit-learn pandas matplotlib dagshub
+
       - name: Run mlflow project
+        working-directory: MLproject
         run: |
-          mlflow run MLproject --env-manager=local 
- 
-      # Save models to GitHub Repository
-      - name: Save mlruns to repo
-        run: |
-          git config --global user.name ${{ secrets.username }}
-          git config --global user.email ${{ secrets.email }}
-          git add mlruns/
-          git commit -m "Save mlruns from CI run"
-          git push origin master
+          mlflow run . --env-manager=local -P dataset=../${{ env.CSV_URL }}
