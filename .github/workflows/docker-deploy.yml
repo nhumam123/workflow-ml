@@ -4,7 +4,7 @@ on:
   workflow_dispatch:      # bisa dipicu manual dari tab Actions di GitHub
     inputs:
       run_id:
-        description: "MLflow run_id deploy"
+        description: "MLflow registered model deploy"
         required: true
 
 env:
@@ -34,7 +34,7 @@ jobs:
       #     print('Run ditemukan:', run.info.run_id)
       #     print('Status:', run.info.status)
       #     print('Experiment ID:', run.info.experiment_id)
-          "
+
       # - name: Inspect MLflow artifacts
       #   run: |
       #     python <<EOF
