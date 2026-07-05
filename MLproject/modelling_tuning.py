@@ -88,7 +88,8 @@ for n_estimators in [200, 300, 400, 500]:
         mlflow.log_metric("recall", recall)
         mlflow.log_metric("f1_score", f1)
 
-        mlflow.sklearn.log_model(model, "model")
+        # mlflow.sklearn.log_model(model, "model")
+        mlflow.xgboost.log_model(model, name="model")
 
         print(f"Run xgb_{n_estimators}")
         print(f"Accuracy : {accuracy}")
