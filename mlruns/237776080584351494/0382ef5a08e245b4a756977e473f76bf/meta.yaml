@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Project/python/sistem-automation/mlruns/237776080584351494/0382ef5a08e245b4a756977e473f76bf/artifacts
+end_time: 1783046782261
+entry_point_name: ''
+experiment_id: '237776080584351494'
+lifecycle_stage: active
+run_id: 0382ef5a08e245b4a756977e473f76bf
+run_name: xgb_400
+run_uuid: 0382ef5a08e245b4a756977e473f76bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783046749757
+status: 3
+tags: []
+user_id: naufa

@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Project/python/sistem-automation/mlruns/978228246628800746/18c2c3627e9747f19dcf316898e5bb70/artifacts
+end_time: 1782618104372
+entry_point_name: ''
+experiment_id: '978228246628800746'
+lifecycle_stage: active
+run_id: 18c2c3627e9747f19dcf316898e5bb70
+run_name: XGBoost_SMOTE_Run
+run_uuid: 18c2c3627e9747f19dcf316898e5bb70
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1782618092334
+status: 3
+tags: []
+user_id: naufa

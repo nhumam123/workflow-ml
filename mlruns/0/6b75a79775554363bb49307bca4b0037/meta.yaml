@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Project/python/sistem-automation/mlruns/0/6b75a79775554363bb49307bca4b0037/artifacts
+end_time: 1783188240664
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6b75a79775554363bb49307bca4b0037
+run_name: placid-snake-361
+run_uuid: 6b75a79775554363bb49307bca4b0037
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783188216978
+status: 4
+tags: []
+user_id: naufa

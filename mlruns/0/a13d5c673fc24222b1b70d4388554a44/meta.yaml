@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Project/python/sistem-automation/mlruns/0/a13d5c673fc24222b1b70d4388554a44/artifacts
+end_time: 1783188456440
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a13d5c673fc24222b1b70d4388554a44
+run_name: debonair-skink-941
+run_uuid: a13d5c673fc24222b1b70d4388554a44
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783188436186
+status: 4
+tags: []
+user_id: naufa

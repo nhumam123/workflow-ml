@@ -1,0 +1,9 @@
+name: workflow-ml-fraud
+
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      dataset: {type: string, default: "../creditcardfraud/creditcard.csv"}
+    command: "python modelling.py {dataset}"

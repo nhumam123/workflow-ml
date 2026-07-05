@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Project/python/sistem-automation/mlruns/0/70c28cd1ecff4d35ba4526ec44d48ff3/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 70c28cd1ecff4d35ba4526ec44d48ff3
+run_name: adorable-doe-305
+run_uuid: 70c28cd1ecff4d35ba4526ec44d48ff3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783186288599
+status: 1
+tags: []
+user_id: naufa

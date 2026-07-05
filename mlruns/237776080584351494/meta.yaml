@@ -1,0 +1,6 @@
+artifact_location: file:///C:/Project/python/sistem-automation/mlruns/237776080584351494
+creation_time: 1782723453252
+experiment_id: '237776080584351494'
+last_update_time: 1782723453252
+lifecycle_stage: active
+name: XGBoost_Tuning_Experiment
