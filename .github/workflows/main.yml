@@ -33,5 +33,7 @@ jobs:
 
       - name: Run mlflow project
         working-directory: MLproject
+        env:
+          MLFLOW_ALLOW_FILE_STORE: "true"
         run: |
           mlflow run . --env-manager=local -P dataset=../${{ env.CSV_URL }}
