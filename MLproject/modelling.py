@@ -93,6 +93,9 @@ with mlflow.start_run(run_name="XGBoost_SMOTE_Run"):
     mlflow.log_dict(report, "classification_report.json")
     
     # [LOG MODEL] Simpan struktur model XGBoost Anda ke MLflow Artifacts
-    mlflow.xgboost.log_model(model_xgb, name="model")
+    mlflow.xgboost.log_model(
+            model_xgb, 
+            name="model",
+            registered_model_name="MyXGBoostModel")
 
 print("Eksperimen berhasil dicatat ke MLflow!")
