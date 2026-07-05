@@ -32,6 +32,9 @@ mlflow.set_experiment("Eksperimen_SML_Naufal_Humam")
 dataset_path = sys.argv[1] if len(sys.argv) > 1 else "../creditcardfraud/creditcard.csv"
 
 df = pd.read_csv(dataset_path)
+
+df.columns = df.columns.str.lower()
+
 # 1. Pisahkan Fitur dan Target
 X = df.drop(columns=['Class'])
 y = df['Class']
