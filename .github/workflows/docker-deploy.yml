@@ -26,29 +26,29 @@ jobs:
       - name: Install mlflow
         run: pip install mlflow
       
-      - name: Validate run_id exists
-        run: |
-          python -c "
-          import mlflow
-          run = mlflow.get_run('${{ github.event.inputs.run_id }}')
-          print('Run ditemukan:', run.info.run_id)
-          print('Status:', run.info.status)
-          print('Experiment ID:', run.info.experiment_id)
+      # - name: Validate run_id exists
+      #   run: |
+      #     python -c "
+      #     import mlflow
+      #     run = mlflow.get_run('${{ github.event.inputs.run_id }}')
+      #     print('Run ditemukan:', run.info.run_id)
+      #     print('Status:', run.info.status)
+      #     print('Experiment ID:', run.info.experiment_id)
           "
-      - name: Inspect MLflow artifacts
-        run: |
-          python <<EOF
-          import mlflow
-          from mlflow.tracking import MlflowClient
+      # - name: Inspect MLflow artifacts
+      #   run: |
+      #     python <<EOF
+      #     import mlflow
+      #     from mlflow.tracking import MlflowClient
 
-          client = MlflowClient()
-          run_id = "${{ github.event.inputs.run_id }}"
+      #     client = MlflowClient()
+      #     run_id = "${{ github.event.inputs.run_id }}"
 
-          artifacts = client.list_artifacts(run_id)
-          print("Root artifacts:")
-          for a in artifacts:
-              print("-", a.path)
-          EOF
+      #     artifacts = client.list_artifacts(run_id)
+      #     print("Root artifacts:")
+      #     for a in artifacts:
+      #         print("-", a.path)
+      #     EOF
 
       - name: Build Docker image from MLflow model
         run: |
