@@ -32,12 +32,9 @@ mlflow.set_experiment("Eksperimen_SML_Naufal_Humam")
 dataset_path = sys.argv[1] if len(sys.argv) > 1 else "../creditcardfraud/creditcard.csv"
 
 df = pd.read_csv(dataset_path)
-
-df.columns = df.columns.str.lower()
-
 # 1. Pisahkan Fitur dan Target
-X = df.drop(columns=['class'])
-y = df['class']
+X = df.drop(columns=['Class'])
+y = df['Class']
 
 # 2. Split Data (80% Train, 20% Test) - WAJIB SEBELUM SMOTE
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
