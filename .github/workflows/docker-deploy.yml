@@ -25,6 +25,16 @@ jobs:
 
       - name: Install mlflow
         run: pip install mlflow
+      
+      - name: Validate run_id exists
+        run: |
+          python -c "
+          import mlflow
+          run = mlflow.get_run('${{ github.event.inputs.run_id }}')
+          print('Run ditemukan:', run.info.run_id)
+          print('Status:', run.info.status)
+          print('Experiment ID:', run.info.experiment_id)
+          "
 
       - name: Build Docker image from MLflow model
         run: |
