@@ -53,7 +53,7 @@ jobs:
       - name: Build Docker image from MLflow model
         run: |
           mlflow models build-docker \
-            --model-uri "runs:/${{ github.event.inputs.run_id }}/model" \
+            --model-uri "models:/${{ github.event.inputs.run_id }}/1" \
             --name "${{ secrets.DOCKERHUB_USERNAME }}/workflow-ml"
 
       - name: Login to Docker Hub
