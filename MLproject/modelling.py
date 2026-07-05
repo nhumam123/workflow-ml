@@ -12,13 +12,15 @@ import sys
 # --- 1. INISIALISASI MLFLOW ---
 import mlflow
 import mlflow.xgboost
-import dagshub
 
 import os
-os.environ.pop("MLFLOW_RUN_ID", None)
+# os.environ.pop("MLFLOW_RUN_ID", None)
 
-dagshub.init(repo_owner='nhumam123', repo_name='workflow-ml', mlflow=True)
 
+
+if not os.getenv("GITHUB_ACTIONS"):
+    import dagshub
+    dagshub.init(repo_owner='nhumam123', repo_name='workflow-ml', mlflow=True)
 
 # Atur tracking URI ke localhost
 # mlflow.set_tracking_uri("http://127.0.0.1:5000")
